@@ -19,7 +19,7 @@ body{
 .movies{
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(5,20%);
     justify-items: center;
 
     
@@ -74,6 +74,7 @@ body{
     bottom: 0px;
     color: white;
     text-shadow: 1px 2px 2px black;
+    color: ;
     
    
 }
@@ -111,10 +112,7 @@ body{
     width: 200px;
     /* margin: 10px; */
 }
-.container:hover .description{
-    opacity: 1;
-    background-color: rgb(27, 3, 95,0.8);
-}
+
 .description{
     position: absolute;
     bottom: 0;
@@ -130,6 +128,10 @@ body{
     transition: .6s ease;
     box-shadow: 2px 2px 2px black;
     border-radius: 5px;
+}
+.container:hover .description{
+    opacity: 1;
+    background-color: rgb(27, 3, 95,0.8);
 }
 .texto{
     font-size: 15px;
@@ -167,12 +169,20 @@ body{
 
 .navBar{
     display:flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     position: sticky;
     top: 0px;
     z-index: 1;
     background-color: #1b035f;
     padding-inline: 30px;
+}
+.busqueda{
+    display: flex;
+    align-items:center ;
+    
+}
+.menu{
+    float: right;
 }
 .navBar input{
     
@@ -182,12 +192,10 @@ body{
     border-radius: 5px 0px 0px 5px;
     height: 20px;
     border: transparent;
+    margin: right;
     
 }
-.busqueda{
-    display: flex;
-    align-items:center ;
-}
+
 .search{
     color: white;
     background-color: #6a3ce9;
@@ -206,9 +214,11 @@ body{
 
 
 .logo{
-    margin: 15px;
+    
     color: white;
     text-decoration: none;
+    float: left;background-color: #1b035f;
+    padding: 16.1px 0 16.1px 40px ;
     
 }
 
@@ -260,30 +270,33 @@ body{
 /* Details */
 .soloPeli{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     animation-name: movies;
     animation-duration: 1s;
     animation-timing-function: linear;
     
     
+    
 }
 .soloPeli img{
     height: 450px;
-    margin: 30px;
+    /* margin-right: 32px; */
+    margin: 30px 36px 30px 0px;
     border-radius: 10px;
     box-shadow: 2px 2px 2px rgb(173, 79, 211);
+    /* width: 55%; */
 }
 .detalles{
     margin-left: 20px;
     color: white;
-    width: 60%;
+    width: 45%;
 }
 .detalles h2{
     font-size: 40px;
 }
 .detalles p{
     justify-self: center;
-    max-width: 80%;
+    max-width: 100%;
     text-align: justify;
     color: rgb(149, 149, 149);
 }
@@ -295,7 +308,7 @@ body{
     display: flex;
     flex-direction: column;
     margin: 20px auto;
-    width: 70%;
+    width: 71%;
     background-color: #6139e2;
     padding: 10px;
     border: 1px transparent;
@@ -446,25 +459,28 @@ input[type="radio"] {
 }
 
 .formulario{
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     justify-content: center;
     
     background-color: #6812be;
-    padding:0px 50px 10px 50px;
-    margin: 20px auto;
+    
+    margin: 20px auto; */
     
     
 }
 .input{
+    display: flex;
+    justify-content: center;
     padding: 10px;
-    width: 210px;
+    width: 60%;
     background-color: rgb(140, 0, 255);
     margin: 5px auto;
     border-radius: 5px;
     border: solid transparent;
     box-shadow: 2px 2px 1px;
-    font-size: 17px;text-align: left;
+    font-size: 17px;
+    text-align: left;
     /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
 }
 .input:focus{
@@ -490,10 +506,215 @@ input[type="radio"] {
 .registrate{
     /* text-decoration: none; */
     color: rgb(255, 255, 255);
+    
     text-shadow: 1px 1px 1px rgb(0, 0, 0);
     font-size: 18px;
     /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
 }
+@media only screen and (min-width:1368px ){
+    
+    .imagen{
+        width: 250px;
+    }
+    .container{
+        width: 250px;
+    }
+    .description{
+        height:375px;
+    }
+    .soloPeli img{
+        height: 600px;
+        
+    } 
+    .detalles h2{
+        font-size: 55px;
+    }
+    .detalles p{
+
+    }
+    .texto2{
+        height: 240px;
+    }
+}
+
+
+
+
+
+@media only screen and (max-width:1024px){
+    .movies{
+        grid-template-columns: repeat(3,33%);
+    }
+    .imagen{
+        width: 250px;
+    }
+    .container{
+        width: 250px;
+    }
+    .description{
+        height:380px;
+    }
+    .soloPeli img{
+        height: 300px;
+        
+    } 
+    .texto2{
+        height: 250px;
+    }
+}
+@media only screen and (max-width:768px){
+    .movies{
+        grid-template-columns: repeat(3,33%);
+    }
+    .movie h2 {
+        font-size: 17px;
+    }
+    .movie p{
+        font-size: 12px;
+    }
+    .imagen{
+        width: 200px;
+    }
+    .container{
+        width: 200px;
+    }
+    .description{
+        height:300px;
+    }
+    .soloPeli img{
+        height: 280px;
+        
+    } 
+    .navBar{
+        display: none;
+    }
+    .texto2{
+        height: 200px;
+    }
+}
+@media only screen and (max-width:625px){
+    .movies{
+        grid-template-columns: repeat(2,50%);
+    }
+    .movie h2 {
+        font-size: 20px;
+    }
+    .movie p{
+        font-size: 15px;
+    }
+    .imagen{
+        width: 230px;
+    }
+    .container{
+        width: 230px;
+    }
+    .description{
+        height:350px;
+    }
+    .soloPeli img{
+        height: 280px;
+        margin: 40px 0;
+        
+    } 
+    .soloPeli p{
+        font-size: 12px;
+        
+    }
+    .soloPeli h2{
+        font-size: 30px;
+    }
+    #titulo{
+        font-size: 20px;
+    }
+    .texto2{
+        height: 240px;
+    }
+}
+@media only screen and (max-width:480px){
+    .movies{
+        grid-template-columns: repeat(1,100%);
+    }
+    .movie h2 {
+        font-size: 20px;
+    }
+    .movie p{
+        font-size: 15px;
+    }
+    .imagen{
+        width: 250px;
+    }
+    .container{
+        width: 250px;
+    }
+    .description{
+        height:375px;
+    }
+    .soloPeli img{
+        height: 280px;
+        margin: 40px 0;
+        
+    } 
+    .soloPeli p{
+        font-size: 12px;
+        
+    }
+    .soloPeli h2{
+        font-size: 30px;
+    }
+    #titulo{
+        font-size: 20px;
+    }
+    .texto2{
+        height: 270px;
+    }
+}
+@media only screen and (max-width:400px){
+    .movies{
+        grid-template-columns: repeat(1,100%);
+    }
+    .movie h2 {
+        font-size: 20px;
+    }
+    .movie p{
+        font-size: 15px;
+    }
+    .imagen{
+        width: 250px;
+    }
+    .container{
+        width: 250px;
+    }
+    .description{
+        height:375px;
+    }
+    .soloPeli{
+        flex-direction: column;
+        
+        align-items: center;
+    }
+    .soloPeli img{
+        height: 300px;
+        margin: 40px 0 0 0;
+        
+    } 
+    .soloPeli p{
+        font-size: 14px;
+        
+    }
+    .soloPeli h2{
+        font-size: 30px;
+    }
+    .detalles{
+        width: 75%;
+    }
+    #titulo{
+        font-size: 20px;
+    }
+    .texto2{
+        height: 270px;
+    }
+}
+
     
 
 
