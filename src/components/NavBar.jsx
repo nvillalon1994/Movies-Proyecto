@@ -6,12 +6,18 @@ import logo2 from "../images/logo3.jpg"
 export default function NavBar() {
 
     const [categoria,setCategoria]=useState(false)
-    
+    const[menu, setMenu]=useState(false)
+    const despliegaMenu =()=>{
+        setMenu(!menu)
+        setCategoria(false)
+    }
     const mostrarCategoria=()=>{
         setCategoria(!categoria)
     }
 
-    const {usuario,logout,movies,show,setShow,filtroPeticion,actualizarFiltroPeticion,input,setInput}=useContext(moviesContext)
+    const {usuario,logout,movies,show,setShow,filtroPeticion,actualizarFiltroPeticion,categorias,setCategorias,
+        // filtrarNombre,
+        input,setInput}=useContext(moviesContext)
     
 
 
@@ -31,7 +37,7 @@ export default function NavBar() {
 
         }
     }
-    const[categorias,setCategorias]=useState()
+    // const[categorias,setCategorias]=useState()
     const filtrarCategoria=()=>{
         if(categorias===" "){         
             setShow(true)
@@ -49,54 +55,88 @@ export default function NavBar() {
 
         }
     }
+    const filtrar =()=>{
+        filtrarCategoria()
+    }
     const salir =()=>{
         logout()
       }
     
-    console.log(categorias)
+    console.log(menu)
   return (
-    <nav >
+    
 
-        <Link to={"/"} className="logo"><img src={logo2} alt="logo" width="120"  /></Link>
-        {/* <motion.div>
-            <h1>hola</h1>
-
-        </motion.div> */}
+        
         <div className='navBar'>
-            
-            <div className='busqueda'>
-                <input type="text" placeholder='Buscar Películas' onChange={e=>{setInput(e.currentTarget.value)}}/>
-                <button className='search' onClick={filtrarNombre}>buscar</button>
-            </div>
-            
-            <ul className='menu' >
-                <li onClick={mostrarCategoria} className="categoria">Categorias</li>
-                {categoria?
-                <ul className='categorias'>
-
-                    <li onMouseOver={()=>{setCategorias(" ")}} onClick={filtrarCategoria}>Todas</li>
-                    <li onMouseOver={()=>{setCategorias("Drama")}} onClick={filtrarCategoria}>Drama</li>
-                    <li onMouseOver={()=>{setCategorias("Comedia")}} onClick={filtrarCategoria}>Comedia</li>
-                    <li onMouseOver={()=>{setCategorias("Documental")}} onClick={filtrarCategoria}>Documental</li>
-                    <li onMouseOver={()=>{setCategorias("Acción")}} onClick={filtrarCategoria}>Acción</li>
-                    
-                </ul>:<></>}
-                {/* {!user.nombre?<li> <button onClick={()=>{setUser({nombre:"Usuario"})}}> Login</button></li>:<li>{user.nombre}</li>} */}
+            <Link to={"/"} className="logo"><img src={logo2} alt="logo" width="120"  /></Link>
+            <div className='menu' >
+                <div className='busqueda'>
+                    <input type="text" placeholder='Buscar Películas' onChange={e=>{setInput(e.currentTarget.value)}}/>
+                    <a href="#titulo"><button className='search' onClick={filtrarNombre}>buscar</button></a>
+                </div>
                 
-                {usuario.usuario.nombre?
-                    <div className='userNav'>
-                        <li className="navlog">{usuario.usuario.nombre}</li>
-                        <li onClick={salir} className="navlog">Logout</li>
-                    </div> : 
-                    <div className='userNav'>
-                        <Link to={'/Login'} className="navlog">Login</Link>
-                        <Link to={'/register'} className="navlog">Registrate</Link> 
-                    </div> }
+                <ul className='' >
+                    <li onClick={mostrarCategoria} className="categoria">Categorias</li>
+                    {categoria?
+                    <ul className='categorias'>
 
-            </ul>
+                        <a href='#titulo'><li onMouseOver={()=>{setCategorias(" ")}} onClick={filtrarCategoria}>Todas</li></a>
+                        <a href='#titulo'><li onMouseOver={()=>{setCategorias("Drama")}} onClick={filtrarCategoria}>Drama</li></a>
+                        <a href='#titulo'><li onMouseOver={()=>{setCategorias("Comedia")}} onClick={filtrarCategoria}>Comedia</li></a>
+                        <a href='#titulo'><li onMouseOver={()=>{setCategorias("Documental")}} onClick={filtrarCategoria}>Documental</li></a>
+                        <a href='#titulo'><li onMouseOver={()=>{setCategorias("Acción")}} onClick={filtrarCategoria}>Acción</li></a>
+                        
+                    </ul>:<></>}
+                    {/* {!user.nombre?<li> <button onClick={()=>{setUser({nombre:"Usuario"})}}> Login</button></li>:<li>{user.nombre}</li>} */}
+                    
+                    {usuario.usuario.nombre?
+                        <div className='userNav'>
+                            <li className="navlog">{usuario.usuario.nombre}</li>
+                            <li onClick={salir} className="navlog">Logout</li>
+                        </div> : 
+                        <div className='userNav'>
+                            <Link to={'/Login'} className="navlog">Login</Link>
+                            <Link to={'/register'} className="navlog">Registrate</Link> 
+                        </div> }
+
+                </ul>
+            </div>
+            <button onClick={despliegaMenu} className="logoMenu">menu</button>
+            {menu?<div className='menu2 menuDesplegable' >
+                <div className='busqueda'>
+                    <input type="text" placeholder='Buscar2 Películas' onChange={e=>{setInput(e.currentTarget.value)}}/>
+                    <a href="#titulo"><button className='search' onClick={filtrarNombre}>buscar</button></a>
+                </div>
+                
+                <ul className='' >
+                    
+                    {/* {!user.nombre?<li> <button onClick={()=>{setUser({nombre:"Usuario"})}}> Login</button></li>:<li>{user.nombre}</li>} */}
+                    
+                    {usuario.usuario.nombre?
+                        <div className='userNav'>
+                            <li className="navlog">{usuario.usuario.nombre}</li>
+                            <li onClick={salir} className="navlog">Logout</li>
+                        </div> : 
+                        <div className='userNav'>
+                            <Link to={'/Login'} className="navlog">Login</Link>
+                            <Link to={'/register'} className="navlog">Registrate</Link> 
+                        </div> }
+                        <li onClick={mostrarCategoria} className="categoria">Categorias</li>
+                        {categoria?
+                        <ul className='categorias2'>
+
+                            <a href='#titulo'><li onMouseOver={()=>{setCategorias(" ")}} onClick={filtrarCategoria}>Todas</li></a>
+                            <a href='#titulo'><li onMouseOver={()=>{setCategorias("Drama")}} onClick={filtrarCategoria}>Drama</li></a>
+                            <a href='#titulo'><li onMouseOver={()=>{setCategorias("Comedia")}} onClick={filtrarCategoria}>Comedia</li></a>
+                            <a href='#titulo'><li onMouseOver={()=>{setCategorias("Documental")}} onClick={filtrarCategoria}>Documental</li></a>
+                            <a href='#titulo'><li onMouseOver={()=>{setCategorias("Acción")}} onClick={filtrarCategoria}>Acción</li></a>
+                            
+                        </ul>:<></>}
+                </ul>
+            </div>:<></>}
         </div>
         
         
-    </nav>
+    
   )
 }

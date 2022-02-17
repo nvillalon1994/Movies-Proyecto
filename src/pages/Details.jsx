@@ -43,7 +43,7 @@ export default function Details() {
     
     let stars = rating.current.value
     addRanking(movie,stars)
-    
+    // console.log(stars)
     
   }
   const del =(review)=>{
@@ -62,9 +62,10 @@ export default function Details() {
     mes:(new Date()).getMonth(),
 
   }
-    
   
-  console.log(fecha.getDate())
+  
+  // console.log(movies)
+ 
   return <Page>
       
       <SoloPeli movie={movie}></SoloPeli>

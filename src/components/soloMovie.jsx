@@ -5,13 +5,16 @@ import { moviesContext } from '../context/MoviesContext'
 export default function SoloPeli({movie}) {
   console.log(movie.stars,)
   console.log(movie.numberOfReviews)
-  console.log(movie.stars/movie.numberOfReviews)
-  const {movies,reviews,addReview,usuario,deleteReview,addRanking} = useContext(moviesContext)
+  // console.log(movie.stars/movie.numberOfReviews)
+  const {movies,reviews,addReview,usuario,deleteReview,addRanking,array} = useContext(moviesContext)
   const [puntuacion,setPuntuacion] =useState([])
   const rank2=(e)=>{
-    let stars=e.target.value
-    addRanking(movie,stars)
+    let stars1=e.target.value
+    addRanking(movie,stars1)
+    // console.log(stars1)
   }
+  console.log(array)
+
   return (
     <div className="soloPeli" style={{backgroundImage:`url(${movie.imgfondo})`,backgroundRepeat:`no-repeat`,backgroundSize:`100%`,backgroundBlendMode:'color',backgroundColor:'rgba(0, 0, 0,0.8)'}} >
         <div>
@@ -25,6 +28,7 @@ export default function SoloPeli({movie}) {
             <p>Año: <span>{movie.year}</span> </p>
             <p>Genero: <span>{movie.gender}</span> </p>
             <p>Puntuación: <span>{isNaN(movie.stars/movie.numberOfReviews)?0:(movie.stars/movie.numberOfReviews).toFixed(2)} / 5 estrellas</span></p>
+            {/* <p>Puntuación: <span>{movie.stars/movie.numberOfReviews} / 5 estrellas</span></p> */}
             <div className="clasificacion ">
                <p></p>                     
               <input id="radio1" type="radio" name="estrellas" value="5" onMouseOver={(e) => {setPuntuacion(e.target.value)}} onClick={rank2}/>

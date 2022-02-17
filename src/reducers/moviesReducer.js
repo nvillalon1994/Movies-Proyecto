@@ -9,10 +9,12 @@ const mockup =[
     stars:0,
     numberOfReviews:0,
     duracion:"2hr",
-    imgfondo:"https://i0.wp.com/hipertextual.com/wp-content/uploads/2021/11/la_casa_gucci_ridley_scott.jpg?fit=1200%2C800&ssl=1"
+    imgfondo:"https://i0.wp.com/hipertextual.com/wp-content/uploads/2021/11/la_casa_gucci_ridley_scott.jpg?fit=1200%2C800&ssl=1",
+    slide:true
 
-
-  },{
+    
+  },
+  {
     id:"2",
     title:"Avengers:Endgame",
     img:"https://image.tmdb.org/t/p/w185_and_h278_bestv2/qwLbQSeFy6ht8skBtao7lAZjsDo.jpg",
@@ -22,8 +24,10 @@ const mockup =[
     stars:0,
     numberOfReviews:0,
     duracion:"2hr",
-    imgfondo:"https://i0.wp.com/hipertextual.com/wp-content/uploads/2019/04/hipertextual-nuevo-trailer-avengers-endgame-agradece-fans-universo-marvel-2019351167.jpg?fit=1200%2C675&ssl=1"
-  },{
+    imgfondo:"https://i0.wp.com/hipertextual.com/wp-content/uploads/2019/04/hipertextual-nuevo-trailer-avengers-endgame-agradece-fans-universo-marvel-2019351167.jpg?fit=1200%2C675&ssl=1",
+    slide:true
+  },
+  {
     id:"3",
     title:"La Liga de la Justicia",
     img:"https://image.tmdb.org/t/p/w185_and_h278_bestv2/pI25ennflmJ1R9q7ZTI681f0WBb.jpg",
@@ -33,8 +37,10 @@ const mockup =[
     stars:0,
     numberOfReviews:0,
     duracion:"2hr",
-    imgfondo:"https://media.revistagq.com/photos/6041fc7bd1187a598fb49309/16:9/w_1280,c_limit/liga-de-la-justicia-snyder-cut.jpg"
-  },{
+    imgfondo:"https://media.revistagq.com/photos/6041fc7bd1187a598fb49309/16:9/w_1280,c_limit/liga-de-la-justicia-snyder-cut.jpg",
+    slide:true
+  }
+  ,{
     id:"4",
     title:"Joker",
     img:"https://image.tmdb.org/t/p/w185_and_h278_bestv2/v0eQLbzT6sWelfApuYsEkYpzufl.jpg",
@@ -44,8 +50,10 @@ const mockup =[
     stars:0,
     numberOfReviews:0,
     duracion:"2hr",
-    imgfondo:"https://nosomosnonos.com/wp-content/uploads/2021/09/Joker-Joaquin-Phoenix.jpg"
-  },{
+    imgfondo:"https://nosomosnonos.com/wp-content/uploads/2021/09/Joker-Joaquin-Phoenix.jpg",
+    slide:true
+  },
+  {
     id:"5",
     title:"Godzilla vs Kong",
     img:"https://image.tmdb.org/t/p/w185_and_h278_bestv2/bnuC6hu7AB5dYW26A3o6NNLlIlE.jpg",
@@ -122,14 +130,12 @@ const mockup =[
       let newState;
       switch(action.type){
             case 'addStars':
-                const {movie,stars} = action
+                const {movie,acum,cantidadVotos} = action
                 
-                movie.stars = movie.stars + parseFloat(stars)
+                movie.stars=acum
+                movie.numberOfReviews = cantidadVotos
                 
-                movie.numberOfReviews++
-                newState = { movies:[...state.movies]}
-                break;
-            default:
+                newState = {movies:[...state.movies]}
             
             
       }

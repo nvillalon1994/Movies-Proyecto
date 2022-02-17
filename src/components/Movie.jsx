@@ -4,17 +4,23 @@ import { Link } from 'react-router-dom'
 
 export default function Movie({movie}) {
   const [description,setDescription]=useState(false)
-  
+  const scroll=()=>{
+    window.scroll({
+      top: -1000,
+      left: 100,
+      
+    }
+    )}
   // console.log(description)
   return (
     <section className='pelicula'>
       
-      <Link to={"/details/" +movie.id} className="movie" onMouseOver={()=>setDescription(true)} onMouseOut={()=>setDescription(false)}>
+      <Link to={"/details/" +movie.id} className="movie" onClick={scroll} onMouseOver={()=>setDescription(true)} onMouseOut={()=>setDescription(false)}>
           <div className='container'>
             <article className='imagen'>
               <img src={movie.img} alt={movie.title} />
               <div className='year' >
-                <p className='rank'>{(movie.stars/movie.numberOfReviews).toFixed(2)}/ 5</p>
+                <p className='rank'>{isNaN(movie.stars/movie.numberOfReviews)?0:(movie.stars/movie.numberOfReviews).toFixed(2)}/ 5</p>
                 <p>{movie.year}</p>
               </div>
             </article>

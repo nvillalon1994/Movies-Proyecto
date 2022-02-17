@@ -11,7 +11,7 @@ export default function MoviesContext({children}) {
     const [movies,setMovies] = useReducer(moviesReducer,moviesInitialState)
     //const [movies,setMovies] = useState(mockup)
     const [reviews,dispatchReviews] = useReducer(reviewsReducer,reviewsInitialState)
-    
+    const [array,setArray]=useState([])
     
 
     const [user,dispatchUser]=useReducer(userReducer,userInitialState)
@@ -31,9 +31,22 @@ export default function MoviesContext({children}) {
         dispatchUsuario({type:'login',nombre:nombre,contraseña:contraseña})
     }
     
-    const addRanking =(movie,stars,array)=>{
+    const addRanking =(movie,stars1)=>{
+        
+        let acum=0
+        array.push(stars1)
+        array.forEach(element => {
+            acum=acum+parseInt(element)
+        });
+        console.log(array)
+        let cantidadVotos=array.length
+        console.log(`promedio ${cantidadVotos}`)
 
-        setMovies({type:'addStars',stars,movie})
+
+        
+        
+
+        setMovies({type:'addStars',acum:acum,movie:movie,cantidadVotos:cantidadVotos})
     }
 
     const addReview = (movie,comment,nombre)=>{
@@ -65,9 +78,27 @@ export default function MoviesContext({children}) {
 
         }
     }
+    const[categorias,setCategorias]=useState()
+    const filtrarCategoria=()=>{
+        if(categorias===" "){         
+            setShow(true)
+            const filtroPeticion =[]
+            actualizarFiltroPeticion(filtroPeticion)
+            console.log(filtroPeticion)
+        }else{
+            setShow(false)
+            const filtroPeticion= movies.keys((movie)=>{
+                
+                return movie.gender.toUpperCase().includes(categorias.toUpperCase())
+            })
+            actualizarFiltroPeticion(filtroPeticion)
+            console.log(filtroPeticion)
+
+        }
+    }
     
     
-  return <moviesContext.Provider value={{movies:movies.movies,addReview,reviews:reviews.reviews,register,user,logout,login,usuario,deleteReview,addRanking,show,setShow,filtroPeticion,actualizarFiltroPeticion,setInput,input,filtrarNombre}}>
+  return <moviesContext.Provider value={{movies:movies.movies,addReview,reviews:reviews.reviews,register,user,logout,login,usuario,deleteReview,addRanking,show,setShow,filtroPeticion,actualizarFiltroPeticion,setInput,input,filtrarNombre,categorias,setCategorias,filtrarCategoria,array}}>
       {children}
   </moviesContext.Provider>
 }
