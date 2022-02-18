@@ -1026,6 +1026,7 @@ footer{
     }
     #titulo{
         font-size: 15px;
+        text-align: center;
     }
     #titulo3{
         font-size: 20px;
@@ -1123,7 +1124,8 @@ footer{
         width: 75%;
     }
     #titulo{
-        font-size: 20px;
+        font-size: 14px;
+        
     }
     .texto2{
         height: 270px;
