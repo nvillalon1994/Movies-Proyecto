@@ -4,6 +4,7 @@ import Slider from '../components/Slider'
 import Page from '../components/Page'
 
 import { moviesContext } from '../context/MoviesContext'
+import Footer from '../components/Footer'
 
 export default function Home() {
   const {movies,filtroPeticion,show,categorias} =useContext(moviesContext)
@@ -24,7 +25,7 @@ export default function Home() {
         
         
         </div>
-        
+        <Footer/>
       
         
     </Page>

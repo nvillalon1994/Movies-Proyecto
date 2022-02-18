@@ -4,6 +4,9 @@ import Movie from '../components/Movie';
 import { moviesContext } from '../context/MoviesContext';
 import Page from '../components/Page'
 import SoloPeli from '../components/soloMovie';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import Trailer from '../components/Trailer';
 //import NotFound from './NotFound';
 
 export default function Details() {
@@ -19,9 +22,7 @@ export default function Details() {
 
   const name=usuario.usuario.nombre
 
-  // if(!movie){
-  //   return <NotFound/>
-  // }
+ 
   if(!movie){
     return <Navigate to="/notfound"/>
   }
@@ -39,13 +40,7 @@ export default function Details() {
     
   }
   
-  const rank=()=>{
-    
-    let stars = rating.current.value
-    addRanking(movie,stars)
-    // console.log(stars)
-    
-  }
+ 
   const del =(review)=>{
     
     deleteReview(review)
@@ -54,7 +49,7 @@ export default function Details() {
   }
   
   
-  const fecha =new Date()
+  
   const hora = {
     
     dia:(new Date()).getDate(),
@@ -69,8 +64,8 @@ export default function Details() {
   return <Page>
       
       <SoloPeli movie={movie}></SoloPeli>
-      
-      <h3 id='titulo'> Comentarios</h3>
+      <Trailer movie={movie}></Trailer>
+      <h3 id='titulo3'> Comentarios</h3>
       <div className='comentarios'>
         <textarea ref={comentario} type="text" placeholder='Dejanos tu comentario'></textarea>
        
@@ -89,7 +84,7 @@ export default function Details() {
         </div>
 
         
-        {name===review.nombre?<button onClick={()=>{del(review)}}>Eliminar Comentario</button>:<></>}
+        {name===review.nombre?<button onClick={()=>{del(review)}}><FontAwesomeIcon icon={faTrash}/></button>:<></>}
         
       </div> )}
 

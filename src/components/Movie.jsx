@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 export default function Movie({movie}) {
-  const [description,setDescription]=useState(false)
+  
   const scroll=()=>{
     window.scroll({
       top: -1000,
@@ -11,11 +11,13 @@ export default function Movie({movie}) {
       
     }
     )}
-  // console.log(description)
+  
   return (
     <section className='pelicula'>
       
-      <Link to={"/details/" +movie.id} className="movie" onClick={scroll} onMouseOver={()=>setDescription(true)} onMouseOut={()=>setDescription(false)}>
+      <Link to={"/details/" +movie.id} className="movie" onClick={scroll}
+      
+       >
           <div className='container'>
             <article className='imagen'>
               <img src={movie.img} alt={movie.title} />

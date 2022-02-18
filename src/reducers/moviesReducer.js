@@ -8,9 +8,10 @@ const mockup =[
     gender:"Drama",
     stars:0,
     numberOfReviews:0,
-    duracion:"2hr",
+    duracion:"2h 38m",
     imgfondo:"https://i0.wp.com/hipertextual.com/wp-content/uploads/2021/11/la_casa_gucci_ridley_scott.jpg?fit=1200%2C800&ssl=1",
-    slide:true
+    
+    trailer:"https://www.youtube.com/embed/HSmCZMh5Nqo"
 
     
   },
@@ -23,22 +24,24 @@ const mockup =[
     gender:"Acción",
     stars:0,
     numberOfReviews:0,
-    duracion:"2hr",
+    duracion:"3h 2m",
     imgfondo:"https://i0.wp.com/hipertextual.com/wp-content/uploads/2019/04/hipertextual-nuevo-trailer-avengers-endgame-agradece-fans-universo-marvel-2019351167.jpg?fit=1200%2C675&ssl=1",
-    slide:true
+    
+    trailer:"https://www.youtube.com/embed/znk2OICHbjY"
   },
   {
     id:"3",
-    title:"La Liga de la Justicia",
+    title:"La Liga de la Justicia de Zack Snyder",
     img:"https://image.tmdb.org/t/p/w185_and_h278_bestv2/pI25ennflmJ1R9q7ZTI681f0WBb.jpg",
     description:"Decidido a garantizar que el último sacrificio de Superman no fuera en vano, Bruce Wayne alinea fuerzas con Diana Prince con planes de reclutar un equipo de metahumanos para proteger al mundo de una amenaza inminente de proporciones catastróficas. La tarea resulta más difícil de lo que Bruce imaginaba, ya que cada uno de los reclutas debe enfrentarse a los demonios de su propio pasado para trascender lo que los ha frenado, permitiéndoles unirse y finalmente formar una liga de héroes sin precedentes. Ahora unidos, Batman, Wonder Woman, Aquaman, Cyborg y The Flash pueden ser demasiado tarde para salvar al planeta de Steppenwolf, DeSaad y Darkseid y sus terribles intenciones.",
     year: 2021,
     gender:"Acción",
     stars:0,
     numberOfReviews:0,
-    duracion:"2hr",
+    duracion:"4h 2m",
     imgfondo:"https://media.revistagq.com/photos/6041fc7bd1187a598fb49309/16:9/w_1280,c_limit/liga-de-la-justicia-snyder-cut.jpg",
-    slide:true
+    
+    trailer:"https://www.youtube.com/embed/fp_milOcghU"
   }
   ,{
     id:"4",
@@ -51,7 +54,8 @@ const mockup =[
     numberOfReviews:0,
     duracion:"2hr",
     imgfondo:"https://nosomosnonos.com/wp-content/uploads/2021/09/Joker-Joaquin-Phoenix.jpg",
-    slide:true
+    
+    trailer:"https://www.youtube.com/embed/t433PEQGErc"
   },
   {
     id:"5",
@@ -62,8 +66,9 @@ const mockup =[
     gender:"Acción",
     stars:0,
     numberOfReviews:0,
-    duracion:"2hr",
-    imgfondo:"https://i.ytimg.com/vi/2PP475OUOIY/maxresdefault.jpg"
+    duracion:"1h 53m",
+    imgfondo:"https://i.ytimg.com/vi/2PP475OUOIY/maxresdefault.jpg",
+    trailer:"https://www.youtube.com/embed/RIKOJP9PHP0"
   },{
     id:"6",
     title:"Parasite",
@@ -73,8 +78,9 @@ const mockup =[
     gender:"Comedia",
     stars:0,
     numberOfReviews:0,
-    duracion:"2hr",
-    imgfondo:"https://media.gq.com.mx/photos/5e163a94a3ee270008aa3503/3:2/w_1619,h_1079,c_limit/parasite-datos-de-la-pelicula-que-esta-ganando-todos-los-premios.png"
+    duracion:"2h 12m",
+    imgfondo:"https://media.gq.com.mx/photos/5e163a94a3ee270008aa3503/3:2/w_1619,h_1079,c_limit/parasite-datos-de-la-pelicula-que-esta-ganando-todos-los-premios.png",
+    trailer:"https://www.youtube.com/embed/isOGD_7hNIY"
   },{
     id:"7",
     title:"Tick, Tick… BOOM!",
@@ -84,8 +90,9 @@ const mockup =[
     gender:"Musical",
     stars:0,
     numberOfReviews:0,
-    duracion:"2hr",
-    imgfondo:"https://i.blogs.es/b8d480/tick-tick-boom-cartel-netflix/1366_2000.jpeg"
+    duracion:"2h 1m",
+    imgfondo:"https://i.blogs.es/b8d480/tick-tick-boom-cartel-netflix/1366_2000.jpeg",
+    trailer:"https://www.youtube.com/embed/rdKoDbvEnHA"
   },{
     id:"8",
     title:"The King’s Man: La primera misión",
@@ -95,30 +102,35 @@ const mockup =[
     gender:"Acción",
     stars:0,
     numberOfReviews:0,
-    duracion:"2hr",
-    imgfondo:"https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/the-king-man-primera-misio-n-fotogramas-1640725267.jpg"
+    duracion:"2h 11m",
+    imgfondo:"https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/the-king-man-primera-misio-n-fotogramas-1640725267.jpg",
+    trailer:"https://www.youtube.com/embed/3t6uJabIReA"
   }
   ,{
     id:"9",
-    title:"The King’s Man: La primera misión",
-    img:"https://image.tmdb.org/t/p/w185_and_h278_bestv2/euaYmyoNEr3SKl5YumLIBnzUL8n.jpg",
-    description:"Cuando un grupo formado por los tiranos y las mentes criminales más malvadas de la historia se une para desencadenar una guerra que matará a millones de personas, un hombre tendrá que luchar a contrarreloj para detenerlos. Tercera entrega de la saga ‘Kingsman’, ambientada muchos años antes de las anteriores y explicando el origen de la agencia.",
-    year:2022 ,
+    title:"Spider-Man: Sin camino a casa",
+    img:"https://image.tmdb.org/t/p/w185_and_h278_bestv2/1z7ZQhga4AcSkQNqEU3Tf9XpxoX.jpg",
+    description:"Peter Parker está desenmascarado y ya no puede separar su vida normal de las altas apuestas de ser un superhéroe. Cuando le pide ayuda al Doctor Strange, lo que está en juego se vuelve aún más peligroso, lo que lo obliga a descubrir lo que realmente significa ser Spider-Man.",
+    year:2021 ,
     gender:"Acción",
     stars:0,
     numberOfReviews:0,
-    duracion:"2hr"
+    duracion:"2h 28m ",
+    imgfondo:"https://as01.epimg.net/meristation/imagenes/2021/12/16/reportajes/1639644481_655591_1640209353_noticia_normal.jpg",
+    trailer:"https://www.youtube.com/embed/r6t0czGbuGI"
   },
   {
     id:"10",
-    title:"The King’s Man: La primera misión",
-    img:"https://image.tmdb.org/t/p/w185_and_h278_bestv2/euaYmyoNEr3SKl5YumLIBnzUL8n.jpg",
-    description:"Cuando un grupo formado por los tiranos y las mentes criminales más malvadas de la historia se une para desencadenar una guerra que matará a millones de personas, un hombre tendrá que luchar a contrarreloj para detenerlos. Tercera entrega de la saga ‘Kingsman’, ambientada muchos años antes de las anteriores y explicando el origen de la agencia.",
-    year:2022 ,
-    gender:"Acción",
+    title:"No mires arriba",
+    img:"https://image.tmdb.org/t/p/w185_and_h278_bestv2/qsI7AEaq7qr5h3z5dnG3QIS13Yk.jpg",
+    description:"Dos astrónomos mediocres deben emprender una gira mediática descomunal para avisar a la humanidad de la llegada de un cometa que va a destruir la Tierra.",
+    year:2021 ,
+    gender:"Comedia",
     stars:0,
     numberOfReviews:0,
-    duracion:"2hr"
+    duracion:"2h 25m"
+    ,imgfondo:"https://i.blogs.es/09e18f/no-mires-arriba-cartel-netflix/1366_2000.jpeg",
+    trailer:"https://www.youtube.com/embed/kWkUg22UbVg"
   }
   
   ]

@@ -1,4 +1,4 @@
-import React,{createContext, useEffect, useReducer,useState} from 'react';
+import React,{createContext, useReducer,useState} from 'react';
 import loginReducer, { loginInitialState } from '../reducers/loginReducer';
 import moviesReducer, { moviesInitialState } from '../reducers/moviesReducer';
 import reviewsReducer,{reviewsInitialState} from '../reducers/reviewsReducer';
@@ -9,7 +9,7 @@ export const moviesContext = createContext()
 export default function MoviesContext({children}) {
     
     const [movies,setMovies] = useReducer(moviesReducer,moviesInitialState)
-    //const [movies,setMovies] = useState(mockup)
+    
     const [reviews,dispatchReviews] = useReducer(reviewsReducer,reviewsInitialState)
     const [array,setArray]=useState([])
     
@@ -38,21 +38,17 @@ export default function MoviesContext({children}) {
         array.forEach(element => {
             acum=acum+parseInt(element)
         });
-        console.log(array)
-        let cantidadVotos=array.length
-        console.log(`promedio ${cantidadVotos}`)
-
-
         
+        let cantidadVotos=array.length
         
 
         setMovies({type:'addStars',acum:acum,movie:movie,cantidadVotos:cantidadVotos})
     }
 
     const addReview = (movie,comment,nombre)=>{
-        // setMovies({type:'addStars',movie,stars})
+        
         dispatchReviews({type:'addReview',idMovie:movie.id,comment,nombre})
-        // setReviews([...reviews,{id:reviews.length,idMovie:movie.id,comment}])
+        
     }
     const deleteReview = (review)=>{
         dispatchReviews({type:'deleteReview',review})
@@ -70,7 +66,7 @@ export default function MoviesContext({children}) {
             // console.log(filtroPeticion)
         }else{
             setShow(false)
-            const filtroPeticion= movies.filter((movie)=>{
+            const filtroPeticion= movies.movies.filter((movie)=>{
                 return movie.title.toUpperCase().includes(input.toUpperCase())
             })
             actualizarFiltroPeticion(filtroPeticion)
@@ -87,7 +83,7 @@ export default function MoviesContext({children}) {
             console.log(filtroPeticion)
         }else{
             setShow(false)
-            const filtroPeticion= movies.keys((movie)=>{
+            const filtroPeticion= movies.movies.filter((movie)=>{
                 
                 return movie.gender.toUpperCase().includes(categorias.toUpperCase())
             })

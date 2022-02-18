@@ -26,13 +26,22 @@ body{
     max-width: 100%;
     /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
 }
+#titulo3{
+    font-size: 40px;
+    text-align: left;
+    margin-left: 190px;
+    max-width: 100%;
+    /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+}
 /* Slide */
+
 .slide3 img{
     width: 100%;
-    /* height: 600px; */
+    
     overflow: hidden;
-    opacity: 0.6;
-    animation: movies 2s;
+    opacity: 0.6 ;
+    animation: movies2 2s;
+    
 
 }
 .slide4{
@@ -87,7 +96,7 @@ body{
 
 .movies{
     width: 100%;
-    height: 768px;
+    height: fit-content;
     display: grid;
     grid-template-columns: repeat(5,20%);
     justify-items: center;
@@ -114,6 +123,15 @@ body{
     
 }
 @keyframes movies {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+    
+}
+@keyframes movies2 {
     0%{
         opacity: 0;
     }
@@ -398,6 +416,16 @@ body{
     color: white;
     
 }
+.trailer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.trailer iframe{
+    width: 60%;
+    height: 500px;
+    margin: auto;
+}
 .comentarios{
     display: flex;
     flex-direction: column;
@@ -426,6 +454,9 @@ body{
     border: 1px transparent;
     border-radius: 6px;
     box-shadow: 1px 1px 2px black;
+}
+.comentarios button:hover{
+    background-color: #7765df;
 }
 .reviews{
     display: flex;
@@ -458,16 +489,22 @@ body{
 .review p{
     text-align: justify;
     margin: 15px 10px;
+    max-width: 90%;
+    overflow: hidden;
 }
 .reviews button{
     height: fit-content;
     width: fit-content;
     padding: 10px;
+    margin: 20px 10px;
     background-color: #2407c7;
     color: white;
     border: 1px transparent;
     border-radius: 6px;
     box-shadow: 1px 1px 2px black;
+}
+.reviews button:hover{
+    background-color: #6334e6;
 }
 .categoria{
     text-decoration: none;
@@ -491,7 +528,7 @@ body{
     background-color: rgb(134, 102, 223);
     border-radius: 0px 0px 5px 5px;
     animation-name: movies;
-    animation-duration: 0.5s;
+    animation-duration: 1s;
     animation-timing-function: linear;
     
     
@@ -499,6 +536,20 @@ body{
 
 .categorias ul:hover{
     background-color:rgb(210, 199, 240) ;
+}
+.categorias li{  
+    color: white;
+    height: 100%;
+    
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    animation-name: movies;
+    animation-duration: 1.3s;
+    animation-timing-function: linear;
+    
+    
+
 }
 .categorias2{
     
@@ -547,23 +598,12 @@ body{
     background-color: rgb(134, 102, 223);
     border-radius: 0px 0px 5px 5px;
     animation-name: movies;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    
-    
-}
-.categorias li{  
-    color: white;
-    height: 100%;
-    
-    border-radius: 10px;
-    padding: 10px;
-    text-align: center;
-    animation-name: movies;
     animation-duration: 1s;
     animation-timing-function: linear;
-
+    
+    
 }
+
 
 
 
@@ -654,11 +694,42 @@ input[type="radio"] {
 }
 .registrate{
     /* text-decoration: none; */
-    color: rgb(255, 255, 255);
+    color: rgb(245, 245, 245);
     
     text-shadow: 1px 1px 1px rgb(0, 0, 0);
     font-size: 18px;
     /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+}
+footer{
+    display: flex;
+    justify-content: space-around;
+    background-color: #0f0231;
+    font-size: 15px;
+    text-align: center;
+    height: 150px;
+    padding: 35px 0px;
+    
+}
+.redes{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    
+
+}
+.red{
+    font-size: 30px;
+    margin: 0;
+    padding:0 10px
+}
+.instagram{
+    color: rgb(221, 0, 241);
+}
+.facebook{
+    color: rgb(46, 67, 250);
+}
+.whatsapp{
+    color: rgb(70, 238, 70);
 }
 @media only screen and (min-width:1368px ){
     .menu2{
@@ -731,6 +802,11 @@ input[type="radio"] {
         height: 300px;
         
     } 
+    .trailer iframe{
+        
+        height: 400px;
+        
+    }
     .texto2{
         height: 250px;
     }
@@ -775,6 +851,11 @@ input[type="radio"] {
     .container{
         width: 200px;
     }
+    .trailer iframe{
+        
+        height: 300px;
+        
+    }
     .description{
         height:300px;
     }
@@ -795,9 +876,9 @@ input[type="radio"] {
         height: 200px;
     }
     .textoSlide{
-        width: 700px;
+        width: 550px;
         top: 20px;
-        font-size: 40px;
+        font-size: 35px;
         overflow: hidden;
     }
     .textoSlide2{
@@ -836,6 +917,11 @@ input[type="radio"] {
     .container{
         width: 230px;
     }
+    .trailer iframe{
+        
+        height: 200px;
+        
+    }
     .description{
         height:350px;
     }
@@ -853,6 +939,21 @@ input[type="radio"] {
     }
     #titulo{
         font-size: 20px;
+        margin: 20px 0 ;
+        
+    }
+    #titulo3{
+        font-size: 20px;
+        
+        
+    }
+    .review p{
+        text-align: justify;
+        margin: 15px 10px;
+        font-size: 14px;
+    }
+    .regis{
+        font-size: 13px;
     }
     .texto2{
         height: 240px;
@@ -881,6 +982,15 @@ input[type="radio"] {
         height: 400px;
         
     
+    }
+    footer{
+        font-size: 10px;
+        height: 100px;
+        width: 100%;
+    }
+    .red{
+        font-size: 20px;
+        padding: 0;
     }
 }
 @media only screen and (max-width:480px){
@@ -915,7 +1025,32 @@ input[type="radio"] {
         font-size: 30px;
     }
     #titulo{
+        font-size: 15px;
+    }
+    #titulo3{
         font-size: 20px;
+        margin-left: 50px;
+    }
+    .reviews button{
+        font-size: 10px;
+        height: fit-content;
+        width: fit-content;
+        padding: 10px;
+        background-color: #2407c7;
+        color: white;
+        border: 1px transparent;
+        border-radius: 6px;
+        box-shadow: 1px 1px 2px black;
+    }
+    .reviews h3{
+        margin: 0;
+        height: 20px;
+        width: 20px;
+        font-size: 14px;
+        
+    }
+    .review {
+        max-width: 50%;
     }
     .texto2{
         height: 270px;

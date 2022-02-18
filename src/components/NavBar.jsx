@@ -1,8 +1,11 @@
 import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
 import {moviesContext} from '../context/MoviesContext'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 import logo2 from "../images/logo3.jpg"
+
 export default function NavBar() {
 
     const [categoria,setCategoria]=useState(false)
@@ -15,60 +18,25 @@ export default function NavBar() {
         setCategoria(!categoria)
     }
 
-    const {usuario,logout,movies,show,setShow,filtroPeticion,actualizarFiltroPeticion,categorias,setCategorias,
-        // filtrarNombre,
-        input,setInput}=useContext(moviesContext)
+    const {usuario,logout,setCategorias,filtrarNombre,filtrarCategoria,setInput}=useContext(moviesContext)
     
-
-
-    const filtrarNombre=()=>{
-        if(input===" "){         
-            setShow(true)
-            const filtroPeticion =[]
-            actualizarFiltroPeticion(filtroPeticion)
-            // console.log(filtroPeticion)
-        }else{
-            setShow(false)
-            const filtroPeticion= movies.filter((movie)=>{
-                return movie.title.toUpperCase().includes(input.toUpperCase())
-            })
-            actualizarFiltroPeticion(filtroPeticion)
-            console.log(filtroPeticion)
-
-        }
-    }
-    // const[categorias,setCategorias]=useState()
-    const filtrarCategoria=()=>{
-        if(categorias===" "){         
-            setShow(true)
-            const filtroPeticion =[]
-            actualizarFiltroPeticion(filtroPeticion)
-            console.log(filtroPeticion)
-        }else{
-            setShow(false)
-            const filtroPeticion= movies.filter((movie)=>{
-                
-                return movie.gender.toUpperCase().includes(categorias.toUpperCase())
-            })
-            actualizarFiltroPeticion(filtroPeticion)
-            console.log(filtroPeticion)
-
-        }
-    }
-    const filtrar =()=>{
-        filtrarCategoria()
-    }
     const salir =()=>{
         logout()
       }
+      const scroll=()=>{
+        window.scroll({
+          top: -1000,
+          left: 100,
+          
+        }
+        )}
     
-    console.log(menu)
   return (
     
 
         
         <div className='navBar'>
-            <Link to={"/"} className="logo"><img src={logo2} alt="logo" width="120"  /></Link>
+            <Link to={"/"} onClick={scroll} className="logo"><img src={logo2} alt="logo" width="120"  /></Link>
             <div className='menu' >
                 <div className='busqueda'>
                     <input type="text" placeholder='Buscar Películas' onChange={e=>{setInput(e.currentTarget.value)}}/>
@@ -87,7 +55,7 @@ export default function NavBar() {
                         <a href='#titulo'><li onMouseOver={()=>{setCategorias("Acción")}} onClick={filtrarCategoria}>Acción</li></a>
                         
                     </ul>:<></>}
-                    {/* {!user.nombre?<li> <button onClick={()=>{setUser({nombre:"Usuario"})}}> Login</button></li>:<li>{user.nombre}</li>} */}
+                    
                     
                     {usuario.usuario.nombre?
                         <div className='userNav'>
@@ -101,7 +69,7 @@ export default function NavBar() {
 
                 </ul>
             </div>
-            <button onClick={despliegaMenu} className="logoMenu">menu</button>
+            <button onClick={despliegaMenu} className="logoMenu"><FontAwesomeIcon icon={faBars}/></button>
             {menu?<div className='menu2 menuDesplegable' >
                 <div className='busqueda'>
                     <input type="text" placeholder='Buscar2 Películas' onChange={e=>{setInput(e.currentTarget.value)}}/>
@@ -109,9 +77,7 @@ export default function NavBar() {
                 </div>
                 
                 <ul className='' >
-                    
-                    {/* {!user.nombre?<li> <button onClick={()=>{setUser({nombre:"Usuario"})}}> Login</button></li>:<li>{user.nombre}</li>} */}
-                    
+                 
                     {usuario.usuario.nombre?
                         <div className='userNav'>
                             <li className="navlog">{usuario.usuario.nombre}</li>

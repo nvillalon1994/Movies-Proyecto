@@ -1,9 +1,9 @@
-import React, { useContext, useRef, useState } from 'react'
+import React, { useContext, useRef} from 'react'
 import { Link } from 'react-router-dom'
 import Page from '../components/Page'
 import { moviesContext } from '../context/MoviesContext';
 export default function Login() {
-  const {user,login,logout}=useContext(moviesContext)
+  const {user,login}=useContext(moviesContext)
   const name =useRef()
   const password =useRef()
   
@@ -20,18 +20,18 @@ export default function Login() {
       
       if(userName===undefined || userName.contraseña!==contraseña1){
         alert("Usuario o contraseña no valido")
+        
       }else{
         
         if(userName.nombre===nombre1 && userName.contraseña===contraseña1){
           login(nombre1,contraseña1)
+          
         
       }}
       
       
   }
-  const salir =()=>{
-    logout()
-  }
+  
   
   
   return (
@@ -45,7 +45,7 @@ export default function Login() {
             
         </form>
         
-        <Link to={'/'} className="regis" onClick={ingreso} >Ingresa</Link>
+        <Link to={'/'}  className="regis" onClick={ingreso} >Ingresa</Link>
         
         
       </div>
