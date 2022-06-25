@@ -63,7 +63,7 @@ export default function NavBar() {
 
         
         <div className='navBar relative z-40'>
-            {open&&<div className='absolute text-center md:top-16  md:right-[50%] top-40 right-12 bg-violet-400 md:bg-opacity-70 max-w-[200px] w-fit p-2 px-2 max-h-[400px] overflow-auto '>
+            {open&&<div className='absolute text-center md:top-16  md:right-[50%] top-44 right-12 bg-violet-400 md:bg-opacity-70 max-w-[200px] w-fit p-2 px-2 max-h-[400px] overflow-auto '>
                 {filtro.map((peli)=><div className=''>
                 <Link to={"/details/"+peli.id} className='flex justify-between p-2 ' onClick={()=>{setOpen(false);setMenu(false)}}>
                     <img className='max-h-24' src={peli.img} alt="" />

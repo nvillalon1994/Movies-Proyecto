@@ -90,7 +90,7 @@ export default function SoloPeli({movie}) {
 
   return (
     <div className="soloPeli " style={{backgroundImage:`url(${movie.imgfondo})`,backgroundRepeat:`no-repeat`,backgroundSize:`100%`,backgroundBlendMode:'color',backgroundColor:'rgba(0, 0, 0,0.6)'}} >
-      <div></div>
+      
         <div className=''>
           
           <img src={movie.img} alt={movie.title} />
@@ -102,7 +102,7 @@ export default function SoloPeli({movie}) {
             <p>Año: <span>{movie.año}</span> </p>
             <p>Genero: <span>{movie.gender}</span> </p>
             <p>Genero: <span>{movie.gender}</span> </p>
-            <p>Ranking <span>{ranking/movie.stars.length}/5</span></p>
+            <p>Ranking <span>{(ranking/movie.stars.length).toFixed(2)}/5</span></p>
             {/* <p>Puntuación: <span>{isNaN(movie.stars/movie.numberOfReviews)?0:(movie.stars/movie.numberOfReviews).toFixed(2)} / 5 estrellas</span></p> */}
             {/* <p>Puntuación: <span>{isNaN(movie.stars)?0:(movie.stars)} / 5 estrellas</span></p> */}
             
