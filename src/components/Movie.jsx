@@ -22,8 +22,8 @@ export default function Movie({movie}) {
             <article className='imagen'>
               <img src={movie.img} alt={movie.title} />
               <div className='year' >
-                <p className='rank'>{isNaN(movie.stars/movie.numberOfReviews)?0:(movie.stars/movie.numberOfReviews).toFixed(2)}/ 5</p>
-                <p>{movie.year}</p>
+                {/* <p className='rank'>{isNaN(movie.stars/movie.numberOfReviews)?0:(movie.stars/movie.numberOfReviews).toFixed(2)}/ 5</p> */}
+                <p>{movie.año}</p>
               </div>
             </article>
             

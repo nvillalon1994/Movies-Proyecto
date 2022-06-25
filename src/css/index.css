@@ -1,4 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+    
 body{
     margin: 0;
     padding: 0;
@@ -260,12 +264,12 @@ body{
     justify-content: space-between;
     position: -webkit-sticky;
     position: sticky;
-    /* width: 100%; */
+    
     
     top: 0px;
     z-index: 2;
     background-color: #1b035f;
-    /* padding-inline: 30px; */
+    
 }
 .busqueda{
     display: flex;
@@ -273,7 +277,9 @@ body{
     justify-content: center;
     
     
+    
 }
+
 .logoMenu{
     display: none;
     padding: 10px;
@@ -302,8 +308,8 @@ body{
     background-color: #4b13e6;
     padding: 5px;
     border-radius: 5px 0px 0px 5px;
-    height: 20px;
-    border: transparent;
+    height: 30px;
+    border: 2px transparent;
     margin: right;
     
 }
@@ -343,7 +349,7 @@ body{
     margin-inline: 10px;
     list-style-type: none;
     color: white;
-    /* padding-block: 15px; */
+    
 }
 .navBar li:hover{
     background-color:#5d28ee ;
@@ -352,7 +358,7 @@ body{
     display:flex;
 }
 .userNav li{
-    /* list-style-type: none; */
+   
     text-decoration: none;
     color: white;
     background-color: #9b79f8;
@@ -372,7 +378,8 @@ body{
     background-color: #9b79f8;
     padding: 6px;
     border-radius: 10px;
-    width: 100%;
+    width: fit-content;
+    height: fit-content;
     margin: 0 10px;
 }
 .navlog:hover{
@@ -392,14 +399,16 @@ body{
 }
 .soloPeli img{
     height: 450px;
+    width: auto;
     /* margin-right: 32px; */
-    margin: 30px 36px 30px 0px;
+    margin: 30px 40px 30px -80px;
     border-radius: 10px;
     box-shadow: 2px 2px 2px rgb(173, 79, 211);
     /* width: 55%; */
 }
 .detalles{
-    margin-left: 20px;
+    margin-right: 30px;
+    margin-top: 20px;
     color: white;
     width: 45%;
 }
@@ -513,6 +522,7 @@ body{
     padding: 6px;
     border-radius: 10px;
     width: fit-content;
+    height: fit-content;
     margin: 0 10px;
 }
 .categorias{
@@ -612,7 +622,7 @@ input[type="radio"] {
   }
   
   label {
-    color: grey;
+    color: rgb(255, 255, 255);
   }
   .clasificacion {
       float: left;
@@ -1159,7 +1169,6 @@ footer{
     }
 }
 
-    
 
 
 

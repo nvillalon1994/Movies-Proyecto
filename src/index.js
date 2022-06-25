@@ -4,17 +4,19 @@ import './css/index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import MoviesContext from './context/MoviesContext';
+import { Provider } from 'react-redux';
+import store from './redux/store';
 
 
 ReactDOM.render(
-  <React.StrictMode>
+  
     <MoviesContext>
-      
+      <Provider store={store}>
       <App />
-      
+      </Provider>
       
     </MoviesContext>
-  </React.StrictMode>,
+  ,
   document.getElementById('root')
 );
 
