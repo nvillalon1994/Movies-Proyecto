@@ -1022,6 +1022,11 @@ footer{
     .description{
         height:375px;
     }
+    .soloPeli{
+        flex-direction: column;
+            
+        align-items: center;
+    }
     .soloPeli img{
         height: 280px;
         margin: 40px 0;
