@@ -31,6 +31,7 @@ export default function NavBar() {
     const filtroCategoria=(categoria)=>{
         dispatch(getFiltrocategoria(categoria))
         setCategoria(false)
+        setMenu(false)
     }
 
     const filtrarNombre=(info)=>{
@@ -42,7 +43,7 @@ export default function NavBar() {
             dispatch(getFiltroBusqueda(info))
         }
         setCategoria(false)
-        
+        setMenu(false)
     }
     const dispatch=useDispatch()
     const salir =()=>{
