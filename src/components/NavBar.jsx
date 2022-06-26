@@ -14,7 +14,7 @@ import { getFiltroBusqueda, getFiltrocategoria } from '../features/movies';
 export default function NavBar() {
     const auth2 = useSelector(state=>state.auth)
     const {filtro} = useSelector(state=>state.peliculas)
-    console.log(auth2)
+    console.log(auth2.user)
     const [categoria,setCategoria]=useState(false)
     const [open,setOpen]=useState(false)
     const[menu, setMenu]=useState(false)
@@ -43,7 +43,7 @@ export default function NavBar() {
             dispatch(getFiltroBusqueda(info))
         }
         setCategoria(false)
-        setMenu(false)
+        // setMenu(false)
     }
     const dispatch=useDispatch()
     const salir =()=>{
